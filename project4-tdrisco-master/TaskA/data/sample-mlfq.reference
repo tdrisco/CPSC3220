@@ -1,0 +1,86 @@
+MLFQScheduler high_priority_queue_quantum=2 low_priority_queue_quantum=4 workload=sample
+###Incoming Tasks###
+#ID,Arrival,Service
+1 0 1
+2 2 6
+3 2 2
+4 9 8
+5 9 14
+#Scheduling Events###
+Time Queue Event Task
+0000   H   Q    1
+0000   H   R    1
+0001   H   X    1
+0002   H   Q    2
+0002   H   R    2
+0002   H   Q    3
+0004   H   E    2
+0004   L   Q    2
+0004   H   R    3
+0006   H   X    3
+0006   L   R    2
+0009   H   Q    4
+0009   L   P    2
+0009   H   Q    5
+0009   H   R    4
+0011   H   E    4
+0011   L   Q    4
+0011   H   R    5
+0013   H   E    5
+0013   L   Q    5
+0013   L   R    2
+0014   L   X    2
+0014   L   R    4
+0018   L   Q    4
+0018   L   R    5
+0022   L   Q    5
+0022   L   R    4
+0024   L   X    4
+0024   L   R    5
+0028   L   Q    5
+0028   L   R    5
+0032   L   X    5
+###System States###
+Time Run || InQueueH  || InQueueL 
+0000   1 ||           ||          
+0001     ||           ||          
+0002   2 ||   3       ||          
+0003   2 ||   3       ||          
+0004   3 ||           ||   2      
+0005   3 ||           ||   2      
+0006   2 ||           ||          
+0007   2 ||           ||          
+0008   2 ||           ||          
+0009   4 ||   5       ||   2      
+0010   4 ||   5       ||   2      
+0011   5 ||           ||   2   4  
+0012   5 ||           ||   2   4  
+0013   2 ||           ||   4   5  
+0014   4 ||           ||   5      
+0015   4 ||           ||   5      
+0016   4 ||           ||   5      
+0017   4 ||           ||   5      
+0018   5 ||           ||   4      
+0019   5 ||           ||   4      
+0020   5 ||           ||   4      
+0021   5 ||           ||   4      
+0022   4 ||           ||   5      
+0023   4 ||           ||   5      
+0024   5 ||           ||          
+0025   5 ||           ||          
+0026   5 ||           ||          
+0027   5 ||           ||          
+0028   5 ||           ||          
+0029   5 ||           ||          
+0030   5 ||           ||          
+0031   5 ||           ||          
+0032     ||           ||          
+###Task Scheduling Results###
+#ID,Arrival,Service,Departure,Response,Wait
+1 0 1 1 1 0
+2 2 6 14 12 6
+3 2 2 6 4 2
+4 9 8 24 15 7
+5 9 14 32 23 9
+Total response time = 55
+Total wait time = 24
